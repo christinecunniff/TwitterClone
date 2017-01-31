@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -10,29 +10,29 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--RegistrationVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TwitterClone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="RegistrationVC" customModule="TwitterClone" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sky" translatesAutoresizingMaskIntoConstraints="NO" id="5HS-GH-WkE">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="dvE-KH-c97">
-                                <rect key="frame" x="16" y="50" width="343" height="266.5"/>
+                                <rect key="frame" x="16" y="50" width="288" height="316.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fUL-WH-iUu">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="45.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="45.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Twitter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Bd-2S-YmW">
-                                                <rect key="frame" x="0.0" y="0.0" width="343" height="45.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="288" height="45.5"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="33"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -40,34 +40,41 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="LQ5-WC-Gmj">
-                                        <rect key="frame" x="0.0" y="80.5" width="343" height="186"/>
+                                        <rect key="frame" x="0.0" y="80.5" width="288" height="236"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S6J-5n-5FX">
-                                                <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="288" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="0.59827161815068497" colorSpace="calibratedWhite"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6aS-br-j9G">
-                                                <rect key="frame" x="0.0" y="50" width="343" height="30"/>
+                                                <rect key="frame" x="0.0" y="50" width="288" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="0.59827161815068497" colorSpace="calibratedWhite"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="e-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b5a-Vi-0mg">
+                                                <rect key="frame" x="0.0" y="100" width="288" height="30"/>
+                                                <color key="backgroundColor" white="1" alpha="0.59827161819999997" colorSpace="calibratedWhite"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                            </textField>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7fv-MJ-3xU">
-                                                <rect key="frame" x="0.0" y="100" width="343" height="30"/>
+                                                <rect key="frame" x="0.0" y="150" width="288" height="30"/>
                                                 <subviews>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="first name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4hw-bd-Y1f">
-                                                        <rect key="frame" x="0.0" y="0.0" width="166.5" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="139" height="30"/>
                                                         <color key="backgroundColor" white="1" alpha="0.59827161815068497" colorSpace="calibratedWhite"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="last name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4YQ-rV-1OU">
-                                                        <rect key="frame" x="176.5" y="0.0" width="166.5" height="30"/>
+                                                        <rect key="frame" x="149" y="0.0" width="139" height="30"/>
                                                         <color key="backgroundColor" white="1" alpha="0.59827161815068497" colorSpace="calibratedWhite"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
@@ -76,17 +83,20 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="yJt-ye-3sa">
-                                                <rect key="frame" x="0.0" y="150" width="343" height="36"/>
+                                                <rect key="frame" x="0.0" y="200" width="288" height="36"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pRP-Nv-7Ro">
-                                                        <rect key="frame" x="0.0" y="0.0" width="171.5" height="36"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pRP-Nv-7Ro">
+                                                        <rect key="frame" x="0.0" y="0.0" width="144" height="36"/>
                                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                                         <state key="normal" title="Register">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="registerTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="psk-W6-JrM"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cDb-cL-mIQ">
-                                                        <rect key="frame" x="171.5" y="0.0" width="171.5" height="36"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cDb-cL-mIQ">
+                                                        <rect key="frame" x="144" y="0.0" width="144" height="36"/>
                                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                                         <state key="normal" title="Sign In">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -110,10 +120,18 @@
                             <constraint firstItem="dvE-KH-c97" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="uu2-A1-cpe"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailField" destination="b5a-Vi-0mg" id="lM2-WX-94P"/>
+                        <outlet property="firstNameField" destination="4hw-bd-Y1f" id="WvZ-eZ-0GA"/>
+                        <outlet property="lastNameField" destination="4YQ-rV-1OU" id="7ch-HK-zDD"/>
+                        <outlet property="passwordField" destination="6aS-br-j9G" id="kXd-oC-3iU"/>
+                        <outlet property="signInTapped" destination="cDb-cL-mIQ" id="ZK2-Ut-8iz"/>
+                        <outlet property="usernameField" destination="S6J-5n-5FX" id="vBv-5L-tcf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+            <point key="canvasLocation" x="-239" y="101"/>
         </scene>
     </scenes>
     <resources>
