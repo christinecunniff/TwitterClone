@@ -31,7 +31,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fUL-WH-iUu">
                                         <rect key="frame" x="0.0" y="0.0" width="288" height="45.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Twitter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Bd-2S-YmW">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*~TwitterClone~*" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Bd-2S-YmW">
                                                 <rect key="frame" x="0.0" y="0.0" width="288" height="45.5"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="33"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -101,6 +101,9 @@
                                                         <state key="normal" title="Sign In">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="signInTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="POJ-3E-hHC"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -125,7 +128,6 @@
                         <outlet property="firstNameField" destination="4hw-bd-Y1f" id="WvZ-eZ-0GA"/>
                         <outlet property="lastNameField" destination="4YQ-rV-1OU" id="7ch-HK-zDD"/>
                         <outlet property="passwordField" destination="6aS-br-j9G" id="kXd-oC-3iU"/>
-                        <outlet property="signInTapped" destination="cDb-cL-mIQ" id="ZK2-Ut-8iz"/>
                         <outlet property="usernameField" destination="S6J-5n-5FX" id="vBv-5L-tcf"/>
                     </connections>
                 </viewController>
