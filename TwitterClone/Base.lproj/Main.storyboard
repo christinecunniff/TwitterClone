@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="WL2-eB-rPO">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -82,11 +82,11 @@
                                                     </textField>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="yJt-ye-3sa">
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="yJt-ye-3sa">
                                                 <rect key="frame" x="0.0" y="200" width="288" height="36"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pRP-Nv-7Ro">
-                                                        <rect key="frame" x="0.0" y="0.0" width="144" height="36"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="64" height="36"/>
                                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                                         <state key="normal" title="Register">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -96,13 +96,14 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cDb-cL-mIQ">
-                                                        <rect key="frame" x="144" y="0.0" width="144" height="36"/>
+                                                        <rect key="frame" x="235" y="0.0" width="53" height="36"/>
                                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                                         <state key="normal" title="Sign In">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="signInTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="POJ-3E-hHC"/>
+                                                            <segue destination="WL2-eB-rPO" kind="show" animates="NO" id="obc-wR-g9G"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -133,7 +134,101 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-239" y="101"/>
+            <point key="canvasLocation" x="-433" y="68"/>
+        </scene>
+        <!--RegistrationVC-->
+        <scene sceneID="TGn-9p-QJe">
+            <objects>
+                <viewController id="WL2-eB-rPO" customClass="RegistrationVC" customModule="TwitterClone" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kgt-KG-pDk"/>
+                        <viewControllerLayoutGuide type="bottom" id="LSu-HT-30b"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tDG-xP-d52">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainbg" translatesAutoresizingMaskIntoConstraints="NO" id="1NY-DJ-2aI">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="vm7-r0-etB">
+                                <rect key="frame" x="16" y="50" width="288" height="216.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3c7-4a-mtl">
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="45.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TwitterClone" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Zw-wJ-RhQ">
+                                                <rect key="frame" x="0.0" y="0.0" width="288" height="45.5"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="33"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="aN8-C8-yiF">
+                                        <rect key="frame" x="0.0" y="80.5" width="288" height="136"/>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YTF-nd-pVp">
+                                                <rect key="frame" x="0.0" y="0.0" width="288" height="30"/>
+                                                <color key="backgroundColor" white="1" alpha="0.59827161819999997" colorSpace="calibratedWhite"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BOm-EA-WSn">
+                                                <rect key="frame" x="0.0" y="50" width="288" height="30"/>
+                                                <color key="backgroundColor" white="1" alpha="0.59827161819999997" colorSpace="calibratedWhite"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                            </textField>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="jPA-QQ-EkJ">
+                                                <rect key="frame" x="0.0" y="100" width="288" height="36"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B44-n5-Yyf">
+                                                        <rect key="frame" x="0.0" y="0.0" width="43" height="36"/>
+                                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                                        <state key="normal" title="Login">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VII-BK-Fky">
+                                                        <rect key="frame" x="147" y="0.0" width="141" height="36"/>
+                                                        <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="17"/>
+                                                        <state key="normal" title="Create an Account">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <segue destination="BYZ-38-t0r" kind="show" animates="NO" id="wzp-u9-Le3"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="jPA-QQ-EkJ" secondAttribute="trailing" id="KEx-OP-YN7"/>
+                                            <constraint firstItem="jPA-QQ-EkJ" firstAttribute="leading" secondItem="aN8-C8-yiF" secondAttribute="leading" id="ext-sS-aQo"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="vm7-r0-etB" firstAttribute="trailing" secondItem="tDG-xP-d52" secondAttribute="trailingMargin" id="29b-au-bmh"/>
+                            <constraint firstItem="vm7-r0-etB" firstAttribute="leading" secondItem="tDG-xP-d52" secondAttribute="leadingMargin" id="7G8-FP-DJA"/>
+                            <constraint firstItem="1NY-DJ-2aI" firstAttribute="leading" secondItem="tDG-xP-d52" secondAttribute="leading" id="NEF-jM-OfP"/>
+                            <constraint firstItem="LSu-HT-30b" firstAttribute="top" secondItem="1NY-DJ-2aI" secondAttribute="bottom" id="dAj-xA-xrA"/>
+                            <constraint firstAttribute="trailing" secondItem="1NY-DJ-2aI" secondAttribute="trailing" id="ewi-kG-AFr"/>
+                            <constraint firstItem="vm7-r0-etB" firstAttribute="top" secondItem="kgt-KG-pDk" secondAttribute="bottom" constant="30" id="oTB-Dl-Xcx"/>
+                            <constraint firstItem="1NY-DJ-2aI" firstAttribute="top" secondItem="tDG-xP-d52" secondAttribute="top" id="qBE-f1-qif"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="zA6-BF-ybh"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ShW-CK-eh2" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1196" y="68"/>
         </scene>
     </scenes>
     <resources>
