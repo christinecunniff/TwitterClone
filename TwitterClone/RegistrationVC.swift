@@ -71,9 +71,7 @@ class RegistrationVC: UIViewController {
             }).resume()
         }
     }
-   
-    @IBAction func signInTapped(_ sender: Any) {
-    }
+
     
 
 }

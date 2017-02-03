@@ -102,7 +102,6 @@
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="signInTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="POJ-3E-hHC"/>
                                                             <segue destination="WL2-eB-rPO" kind="show" animates="NO" id="obc-wR-g9G"/>
                                                         </connections>
                                                     </button>
@@ -136,10 +135,10 @@
             </objects>
             <point key="canvasLocation" x="-433" y="68"/>
         </scene>
-        <!--RegistrationVC-->
+        <!--LoginVC-->
         <scene sceneID="TGn-9p-QJe">
             <objects>
-                <viewController id="WL2-eB-rPO" customClass="RegistrationVC" customModule="TwitterClone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="WL2-eB-rPO" customClass="LoginVC" customModule="TwitterClone" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kgt-KG-pDk"/>
                         <viewControllerLayoutGuide type="bottom" id="LSu-HT-30b"/>
@@ -152,13 +151,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="vm7-r0-etB">
-                                <rect key="frame" x="16" y="50" width="288" height="216.5"/>
+                                <rect key="frame" x="16" y="50" width="288" height="217"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3c7-4a-mtl">
-                                        <rect key="frame" x="0.0" y="0.0" width="288" height="45.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="46"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TwitterClone" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Zw-wJ-RhQ">
-                                                <rect key="frame" x="0.0" y="0.0" width="288" height="45.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="288" height="46"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="33"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -166,7 +165,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="aN8-C8-yiF">
-                                        <rect key="frame" x="0.0" y="80.5" width="288" height="136"/>
+                                        <rect key="frame" x="0.0" y="81" width="288" height="136"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YTF-nd-pVp">
                                                 <rect key="frame" x="0.0" y="0.0" width="288" height="30"/>
@@ -191,6 +190,9 @@
                                                         <state key="normal" title="Login">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="loginTapped:" destination="WL2-eB-rPO" eventType="touchUpInside" id="GsL-DT-kTY"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VII-BK-Fky">
                                                         <rect key="frame" x="147" y="0.0" width="141" height="36"/>
@@ -225,6 +227,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="zA6-BF-ybh"/>
+                    <connections>
+                        <outlet property="passwordField" destination="BOm-EA-WSn" id="q5F-1V-ig3"/>
+                        <outlet property="usernameField" destination="YTF-nd-pVp" id="8Hg-5u-kL2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ShW-CK-eh2" sceneMemberID="firstResponder"/>
             </objects>
