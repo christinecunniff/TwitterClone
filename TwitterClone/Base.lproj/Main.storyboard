@@ -248,10 +248,10 @@
             </objects>
             <point key="canvasLocation" x="-1196.25" y="67.605633802816897"/>
         </scene>
-        <!--View Controller-->
+        <!--ResetVC-->
         <scene sceneID="sTi-kw-FFY">
             <objects>
-                <viewController id="FDl-Y0-Iwx" sceneMemberID="viewController">
+                <viewController id="FDl-Y0-Iwx" customClass="ResetVC" customModule="TwitterClone" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Do2-ah-b42"/>
                         <viewControllerLayoutGuide type="bottom" id="MYV-Dc-6UE"/>
@@ -298,6 +298,7 @@
                                                         </state>
                                                         <connections>
                                                             <action selector="loginTapped:" destination="FDl-Y0-Iwx" eventType="touchUpInside" id="4B2-GR-Wk0"/>
+                                                            <action selector="resetTapped:" destination="FDl-Y0-Iwx" eventType="touchUpInside" id="DjF-Tl-FjN"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="669-4G-2LB">
@@ -333,6 +334,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Nw6-dI-4HV"/>
+                    <connections>
+                        <outlet property="emailField" destination="THC-Dd-WOp" id="b50-Os-NxV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gul-Ch-TBc" sceneMemberID="firstResponder"/>
             </objects>
