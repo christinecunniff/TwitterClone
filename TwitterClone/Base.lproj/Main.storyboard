@@ -356,11 +356,11 @@
             </objects>
             <point key="canvasLocation" x="-2021" y="68"/>
         </scene>
-        <!--Item 1-->
+        <!--Home-->
         <scene sceneID="Owd-hu-SFT">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yUl-Mi-bok" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 1" id="MCe-f5-oiz"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yUl-Mi-bok" customClass="NavVC" customModule="TwitterClone" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="home" id="MCe-f5-oiz"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="OG2-rB-U01">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -376,6 +376,9 @@
             <point key="canvasLocation" x="-1196" y="894"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="home" width="25" height="25"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="nh5-NT-vza"/>
     </inferredMetricsTieBreakers>

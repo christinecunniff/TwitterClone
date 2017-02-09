@@ -5,6 +5,7 @@ let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
 
 let redSmoothColor = UIColor(red: 255/255, green: 50/255, blue: 75/255, alpha: 1)
 let lightGreenSmoothColor = UIColor(red: 230/255, green: 244/255, blue: 125/255, alpha: 1)
+let brandBlueColor = UIColor(red: 45 / 255, green: 213 / 255, blue: 255 / 255, alpha: 1)
 
 let fontSize12 = UIScreen.main.bounds.width / 31
 
@@ -32,7 +33,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // load content in user var
         user = UserDefaults.standard.value(forKey: "parseJSON") as? NSDictionary
-        print(user)
         
         // if user is registered & logged in, keep them logged in
         if user != nil {

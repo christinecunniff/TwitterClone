@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		F422C05C1E48FC4100E37CC1 /* ResetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F422C05B1E48FC4100E37CC1 /* ResetVC.swift */; };
+		F434BD3D1E4CFD01004694F2 /* NavVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F434BD3C1E4CFD01004694F2 /* NavVC.swift */; };
+		F434BD3F1E4D0A2D004694F2 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F434BD3E1E4D0A2D004694F2 /* TabBarVC.swift */; };
 		F45F060F1E40F5C6001AB77A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45F060E1E40F5C6001AB77A /* AppDelegate.swift */; };
 		F45F06111E40F5C6001AB77A /* RegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45F06101E40F5C6001AB77A /* RegistrationVC.swift */; };
 		F45F06141E40F5C6001AB77A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F45F06121E40F5C6001AB77A /* Main.storyboard */; };
@@ -18,6 +20,8 @@
 
 /* Begin PBXFileReference section */
 		F422C05B1E48FC4100E37CC1 /* ResetVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetVC.swift; sourceTree = "<group>"; };
+		F434BD3C1E4CFD01004694F2 /* NavVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavVC.swift; sourceTree = "<group>"; };
+		F434BD3E1E4D0A2D004694F2 /* TabBarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
 		F45F060B1E40F5C6001AB77A /* TwitterClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F45F060E1E40F5C6001AB77A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F45F06101E40F5C6001AB77A /* RegistrationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationVC.swift; sourceTree = "<group>"; };
@@ -83,6 +87,8 @@
 		F4AF65591E451A1F00EBF8B4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F434BD3C1E4CFD01004694F2 /* NavVC.swift */,
+				F434BD3E1E4D0A2D004694F2 /* TabBarVC.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -168,8 +174,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F422C05C1E48FC4100E37CC1 /* ResetVC.swift in Sources */,
+				F434BD3D1E4CFD01004694F2 /* NavVC.swift in Sources */,
 				F45F06111E40F5C6001AB77A /* RegistrationVC.swift in Sources */,
 				F45F060F1E40F5C6001AB77A /* AppDelegate.swift in Sources */,
+				F434BD3F1E4D0A2D004694F2 /* TabBarVC.swift in Sources */,
 				F4AF65571E4519FD00EBF8B4 /* LoginVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

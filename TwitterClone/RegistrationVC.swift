@@ -88,6 +88,10 @@ class RegistrationVC: UIViewController {
             }).resume()
         }
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 
     
 

@@ -77,4 +77,10 @@ class ResetVC: UIViewController {
             
         }
     }
+    
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
 }
