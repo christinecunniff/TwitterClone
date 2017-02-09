@@ -18,7 +18,7 @@ class TabBarVC: UITabBarController {
 
 extension UIImage {
 
-    func imageColor(color: UIColor) {
+    func imageColor(color: UIColor) -> UIImage {
         
         UIGraphicsBeginImageContextWithOptions(self.size, false, scale)
         let context = UIGraphicsGetCurrentContext()! as CGContext
@@ -29,7 +29,7 @@ extension UIImage {
         
         color.setFill()
         
-        let newImage = UIGraphicsGetImageFromCurrentImageContext() as UIImage
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()! as UIImage
         UIGraphicsEndImageContext()
         
         return newImage
