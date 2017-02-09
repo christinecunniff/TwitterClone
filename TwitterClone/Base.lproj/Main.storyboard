@@ -297,7 +297,6 @@
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="loginTapped:" destination="FDl-Y0-Iwx" eventType="touchUpInside" id="4B2-GR-Wk0"/>
                                                             <action selector="resetTapped:" destination="FDl-Y0-Iwx" eventType="touchUpInside" id="DjF-Tl-FjN"/>
                                                         </connections>
                                                     </button>
