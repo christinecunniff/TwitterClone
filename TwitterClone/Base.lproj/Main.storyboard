@@ -22,9 +22,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainbg" translatesAutoresizingMaskIntoConstraints="NO" id="5HS-GH-WkE">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="dvE-KH-c97">
                                 <rect key="frame" x="16" y="50" width="288" height="316.5"/>
                                 <subviews>
@@ -112,14 +109,10 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="5HS-GH-WkE" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="T2g-9P-UNU"/>
-                            <constraint firstItem="5HS-GH-WkE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="UKP-Yp-xFO"/>
                             <constraint firstItem="dvE-KH-c97" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="bMF-5B-mMf"/>
                             <constraint firstItem="dvE-KH-c97" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="jhk-Bv-roO"/>
-                            <constraint firstAttribute="trailing" secondItem="5HS-GH-WkE" secondAttribute="trailing" id="oyS-cM-jhd"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5HS-GH-WkE" secondAttribute="bottom" id="pLz-xc-AQW"/>
                             <constraint firstItem="dvE-KH-c97" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="uu2-A1-cpe"/>
                         </constraints>
                     </view>
@@ -147,9 +140,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainbg" translatesAutoresizingMaskIntoConstraints="NO" id="1NY-DJ-2aI">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="vm7-r0-etB">
                                 <rect key="frame" x="16" y="50" width="288" height="216.5"/>
                                 <subviews>
@@ -225,16 +215,12 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="vm7-r0-etB" firstAttribute="trailing" secondItem="tDG-xP-d52" secondAttribute="trailingMargin" id="29b-au-bmh"/>
                             <constraint firstItem="vm7-r0-etB" firstAttribute="leading" secondItem="tDG-xP-d52" secondAttribute="leadingMargin" id="7G8-FP-DJA"/>
                             <constraint firstItem="VII-BK-Fky" firstAttribute="leading" secondItem="tDG-xP-d52" secondAttribute="leadingMargin" id="Avv-iD-bMt"/>
-                            <constraint firstItem="1NY-DJ-2aI" firstAttribute="leading" secondItem="tDG-xP-d52" secondAttribute="leading" id="NEF-jM-OfP"/>
-                            <constraint firstItem="LSu-HT-30b" firstAttribute="top" secondItem="1NY-DJ-2aI" secondAttribute="bottom" id="dAj-xA-xrA"/>
-                            <constraint firstAttribute="trailing" secondItem="1NY-DJ-2aI" secondAttribute="trailing" id="ewi-kG-AFr"/>
                             <constraint firstItem="vm7-r0-etB" firstAttribute="top" secondItem="kgt-KG-pDk" secondAttribute="bottom" constant="30" id="oTB-Dl-Xcx"/>
-                            <constraint firstItem="1NY-DJ-2aI" firstAttribute="top" secondItem="tDG-xP-d52" secondAttribute="top" id="qBE-f1-qif"/>
                             <constraint firstItem="VII-BK-Fky" firstAttribute="top" secondItem="vm7-r0-etB" secondAttribute="bottom" constant="10" id="yQL-WQ-Zj1"/>
                         </constraints>
                     </view>
@@ -260,9 +246,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainbg" translatesAutoresizingMaskIntoConstraints="NO" id="meq-Ai-xa6">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="QtJ-yt-YXo">
                                 <rect key="frame" x="16" y="50" width="288" height="166.5"/>
                                 <subviews>
@@ -321,13 +304,9 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="MYV-Dc-6UE" firstAttribute="top" secondItem="meq-Ai-xa6" secondAttribute="bottom" id="0QO-fz-FRc"/>
-                            <constraint firstItem="meq-Ai-xa6" firstAttribute="leading" secondItem="ckz-C9-hnp" secondAttribute="leading" id="Nl2-NE-gsh"/>
-                            <constraint firstItem="meq-Ai-xa6" firstAttribute="top" secondItem="ckz-C9-hnp" secondAttribute="top" id="bUa-mC-sp5"/>
                             <constraint firstItem="QtJ-yt-YXo" firstAttribute="top" secondItem="Do2-ah-b42" secondAttribute="bottom" constant="30" id="fsk-Uc-u6L"/>
-                            <constraint firstAttribute="trailing" secondItem="meq-Ai-xa6" secondAttribute="trailing" id="lUr-SB-yrw"/>
                             <constraint firstItem="QtJ-yt-YXo" firstAttribute="trailing" secondItem="ckz-C9-hnp" secondAttribute="trailingMargin" id="nKj-x3-scS"/>
                             <constraint firstItem="QtJ-yt-YXo" firstAttribute="leading" secondItem="ckz-C9-hnp" secondAttribute="leadingMargin" id="wJx-33-03w"/>
                         </constraints>
@@ -342,9 +321,6 @@
             <point key="canvasLocation" x="-2021" y="68"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="mainbg" width="1296" height="768"/>
-    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="nh5-NT-vza"/>
     </inferredMetricsTieBreakers>

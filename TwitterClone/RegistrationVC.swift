@@ -57,15 +57,26 @@ class RegistrationVC: UIViewController {
                             // if there is an id value...
                             if id != nil {
                                 print(parseJSON)
+                            } else {
+                                DispatchQueue.main.async(execute: {
+                                    let message = parseJSON["message"] as! String
+                                    appDelegate.infoView(mesage: message, color: redSmoothColor)
+                                })
                             }
                             
                         } catch {
-                            print("JSON failed: \(error)")
+                            DispatchQueue.main.async(execute: {
+                                let message = error as! String
+                                appDelegate.infoView(mesage: message, color: redSmoothColor)
+                            })
                         }
                     })
                     // if unable to proceed with the request
                 } else {
-                    print("Request failed: \(error)")
+                    DispatchQueue.main.async(execute: {
+                        let message = error!.localizedDescription
+                        appDelegate.infoView(mesage: message, color: redSmoothColor)
+                    })
                 }
                 // launch prepared session
             }).resume()

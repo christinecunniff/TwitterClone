@@ -54,13 +54,25 @@ class LoginVC: UIViewController {
                         
                         if id != nil {
                             // successfully logged in
+                        } else {
+                            DispatchQueue.main.async(execute: {
+                                let message = parseJSON["message"] as! String
+                                appDelegate.infoView(mesage: message, color: redSmoothColor)
+                            })
                         }
                     } catch {
-                        print("Caught an error: \(error)")
+                        DispatchQueue.main.async(execute: {
+                            let message = error as! String
+                            appDelegate.infoView(mesage: message, color: redSmoothColor)
+                        })
                     }
                     
                 } else {
-                    print("Error: \(error)")
+                    print("Caught an error: \(error)")
+                    DispatchQueue.main.async(execute: {
+                        let message = error!.localizedDescription
+                        appDelegate.infoView(mesage: message, color: redSmoothColor)
+                    })
                 }
                 
             }).resume()

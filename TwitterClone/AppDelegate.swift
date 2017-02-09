@@ -1,22 +1,102 @@
-//
-//  AppDelegate.swift
-//  TwitterClone
-//
-//  Created by Christine Cunniff on 1/31/17.
-//  Copyright © 2017 Christine Cunniff. All rights reserved.
-//
-
 import UIKit
+
+// global var  referring to appDelegate to be called from any class
+let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+
+let redSmoothColor = UIColor(red: 255/255, green: 50/255, blue: 75/255, alpha: 1)
+let lightGreenSmoothColor = UIColor(red: 230/255, green: 244/255, blue: 125/255, alpha: 1)
+
+let fontSize12 = UIScreen.main.bounds.width / 31
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    //image to be animated
+    let backgroundImage = UIImageView()
 
+    // bool to check if errorView is currently showing or not
+    var infoViewIsShowing: Bool = false
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        // creating image view to store background image
+        backgroundImage.frame = CGRect(x: 0, y: 0, width: self.window!.bounds.height * 1.688, height: self.window!.bounds.height)
+        backgroundImage.image = UIImage(named: "mainbg.jpg")
+        self.window!.addSubview(backgroundImage)
+        
+        moveBgLeft()
+        
         return true
+    }
+    
+    func moveBgLeft() {
+        UIView.animate(withDuration: 45, animations: { 
+            self.backgroundImage.frame.origin.x = -self.backgroundImage.bounds.width + self.window!.bounds.width
+        }) { (finished: Bool) in
+            if finished {
+                self.moveBgRight()
+            }
+        }
+    }
+    
+    func moveBgRight() {
+        UIView.animate(withDuration: 45, animations: { 
+            self.backgroundImage.frame.origin.x = 0
+        }) { (finished: Bool) in
+            if finished {
+                self.moveBgLeft()
+            }
+        }
+    }
+    
+    func infoView(mesage message: String, color: UIColor) {
+        
+        if infoViewIsShowing == false {
+            
+            infoViewIsShowing = true
+            let infoViewHeight = self.window!.bounds.height / 14.2
+            let infoViewY = 0 - infoViewHeight
+            
+            let infoView = UIView(frame: CGRect(x: 0, y: infoViewY, width: self.window!.bounds.width, height: infoViewHeight))
+            infoView.backgroundColor = color
+            self.window!.addSubview(infoView)
+            
+            let infoLabelHeight = infoView.bounds.height + UIApplication.shared.statusBarFrame.height / 2
+            let infoLabelWidth = infoView.bounds.width
+            
+            let infoLabel = UILabel()
+            infoLabel.frame.size.width = infoLabelWidth
+            infoLabel.frame.size.height = infoLabelHeight
+            infoLabel.numberOfLines = 0
+            
+            infoLabel.text = message
+            infoLabel.font = UIFont(name: "HelveticaNeue", size: fontSize12)
+            infoLabel.textColor = UIColor.white
+            infoLabel.textAlignment = .center
+            
+            infoView.addSubview(infoLabel)
+            
+            // animate
+            UIView.animate(withDuration: 0.2, animations: {
+                // move the view down
+                infoView.frame.origin.y = 0
+            }, completion: { (finished: Bool) in
+                if finished {
+                    UIView.animate(withDuration: 0.1, delay: 4, options: .curveLinear, animations: {
+                        infoView.frame.origin.y = -infoLabelHeight
+                    }, completion: { (finished) in
+                        if finished {
+                            infoView.removeFromSuperview()
+                            infoView.removeFromSuperview()
+                            self.infoViewIsShowing = false
+                        }
+                    })
+                }
+            })
+        }
+        
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
