@@ -54,9 +54,15 @@ class RegistrationVC: UIViewController {
                             // get id from parseJSON dictionary
                             let id = parseJSON["id"]
                             
-                            // if there is an id value...
+                            // registered successfully
                             if id != nil {
-                                print(parseJSON)
+                                // save user information recieved form our host
+                                UserDefaults.standard.set(parseJSON, forKey: "parseJSON")
+                                user = UserDefaults.standard.value(forKey: "parseJSON") as? NSDictionary
+                                
+                                DispatchQueue.main.async(execute: {
+                                    appDelegate.logIn()
+                                })
                             } else {
                                 DispatchQueue.main.async(execute: {
                                     let message = parseJSON["message"] as! String
