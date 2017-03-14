@@ -12,7 +12,7 @@ class HomeVC: UIViewController, UINavigationControllerDelegate, UIImagePickerCon
         super.viewDidLoad()
 
         // get user details from user gloal var
-        let username = (user!["username"] as? String)?.uppercased()
+        let username = (user!["username"] as AnyObject).uppercased
         let fullname = user!["fullname"] as? String
         let email = user!["email"] as? String
         let ava = user!["ava"] as? String
@@ -101,29 +101,42 @@ class HomeVC: UIViewController, UINavigationControllerDelegate, UIImagePickerCon
         
     }
     
-    // upload image to server
+    // upload image to serve
     func uploadAva() {
         
+        // shotcut id
         let id = user!["id"] as! String
-    
-        let url = URL(string: "http://localhost/TwitterClone/uploadAva.php")!
-        let request = NSMutableURLRequest(url: url)
+        
+        // url path to php file
+        let url = URL(string: "http://localhost/Twitter/uploadAva.php")!
+        
+        // declare request to this file
+        var request = URLRequest(url: url)
+        
+        // declare method of passign inf to this file
         request.httpMethod = "POST"
         
+        // param to be sent in body of request
         let param = ["id" : id]
+        
+        // body
         let boundary = "Boundary-\(UUID().uuidString)"
         request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
         
+        // compress image and assign to imageData var
         let imageData = UIImageJPEGRepresentation(avaImage.image!, 0.5)
         
+        // if not compressed, return ... do not continue to code
         if imageData == nil {
             return
         }
         
-        request.httpBody = createBodyWithParams(param, filePathKey: "file", imageDataKey: imageData!, boundary: boundary) as Data
+        // ... body
+        request.httpBody = createBodyWithParams(param, filePathKey: "file", imageDataKey: imageData!, boundary: boundary)
+        
         
         // launc session
-        URLSession.shared.dataTask(with: url, completionHandler: { (data:Data?, response: URLResponse?, error: NSError?) in
+        URLSession.shared.dataTask(with: request) { data, response, error in
             
             // get main queue to communicate back to user
             DispatchQueue.main.async(execute: {
@@ -186,7 +199,7 @@ class HomeVC: UIViewController, UINavigationControllerDelegate, UIImagePickerCon
                 
             })
             
-        } as! (Data?, URLResponse?, Error?) -> Void).resume()
+            }.resume()
         
     }
     
