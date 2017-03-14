@@ -108,7 +108,7 @@ class HomeVC: UIViewController, UINavigationControllerDelegate, UIImagePickerCon
         let id = user!["id"] as! String
         
         // url path to php file
-        let url = URL(string: "http://localhost/Twitter/uploadAva.php")!
+        let url = URL(string: "http://localhost/TwitterClone/uploadAva.php")!
         
         // declare request to this file
         var request = URLRequest(url: url)
