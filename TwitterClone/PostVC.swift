@@ -111,7 +111,7 @@ class PostVC: UIViewController, UITextViewDelegate, UIImagePickerControllerDeleg
         // shortcuts to data to be passed to php file
         let id = user!["id"] as! String
         uuid = UUID().uuidString
-        let text = textBox.text as String
+        let text = textBox.text.trunc(length: 140) as String
         
         
         // url path to php file
@@ -215,4 +215,16 @@ class PostVC: UIViewController, UITextViewDelegate, UIImagePickerControllerDeleg
         }
     }
 
+}
+
+extension String {
+    
+    func trunc(length: Int, trailing: String? = "...") -> String {
+        if self.characters.count > length {
+            return self.substring(to: self.characters.index(self.startIndex, offsetBy: length)) + (trailing ?? "")
+        } else {
+            return self
+        }
+    }
+    
 }
