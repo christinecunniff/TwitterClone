@@ -8,6 +8,10 @@ class PostVC: UIViewController, UITextViewDelegate, UIImagePickerControllerDeleg
     @IBOutlet weak var pictureImg: UIImageView!
     @IBOutlet weak var postBtn: UIButton!
     
+    
+    var uuid = String()
+    var imageSelected = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -63,7 +67,44 @@ class PostVC: UIViewController, UITextViewDelegate, UIImagePickerControllerDeleg
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
         pictureImg.image = image
         self.dismiss(animated: true, completion: nil)
+        
+        imageSelected = true
     }
+    
+    func createBodyWithParams(_ parameters: [String: String]?, filePathKey: String?, imageDataKey: Data, boundary: String) -> Data {
+        
+        let body = NSMutableData();
+        
+        if parameters != nil {
+            for (key, value) in parameters! {
+                body.appendString("--\(boundary)\r\n")
+                body.appendString("Content-Disposition: form-data; name=\"\(key)\"\r\n\r\n")
+                body.appendString("\(value)\r\n")
+            }
+        }
+        
+        // if file is not selected, it will not upload a file
+        var filename = ""
+        
+        if imageSelected == true {
+            filename = "post-\(uuid).jpg"
+        }
+        
+        let mimetype = "image/jpg"
+        
+        body.appendString("--\(boundary)\r\n")
+        body.appendString("Content-Disposition: form-data; name=\"\(filePathKey!)\"; filename=\"\(filename)\"\r\n")
+        body.appendString("Content-Type: \(mimetype)\r\n\r\n")
+        body.append(imageDataKey)
+        body.appendString("\r\n")
+        
+        body.appendString("--\(boundary)--\r\n")
+        
+        return body as Data
+        
+    }
+    
+    
 
     @IBAction func postTapped(_ sender: UIButton) {
     
