@@ -60,16 +60,13 @@ class HomeVC: UIViewController, UINavigationControllerDelegate, UIImagePickerCon
         self.present(picker, animated: true, completion: nil)
     }
     
+    // selected image
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        picker.dismiss(animated: true, completion: nil)
+        avaImage.image = info[UIImagePickerControllerEditedImage] as? UIImage
+        self.dismiss(animated: true, completion: nil)
         
-        if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
-            avaImage.image = image
-        } else if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            avaImage.image = image
-        } else {
-            avaImage.image = nil
-        }
+        // call func of uploading file to server
+        uploadAva()
     }
     
     // custom body of HTTP request to upload image file
