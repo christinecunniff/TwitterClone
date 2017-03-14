@@ -71,6 +71,7 @@ class PostVC: UIViewController, UITextViewDelegate, UIImagePickerControllerDeleg
         imageSelected = true
     }
     
+    // custom body of HTTP request to upload image file
     func createBodyWithParams(_ parameters: [String: String]?, filePathKey: String?, imageDataKey: Data, boundary: String) -> Data {
         
         let body = NSMutableData();
@@ -82,14 +83,14 @@ class PostVC: UIViewController, UITextViewDelegate, UIImagePickerControllerDeleg
                 body.appendString("\(value)\r\n")
             }
         }
-        
-        // if file is not selected, it will not upload a file
+
+        // if file is not selected, it will not upload a file to server, because we did not declare a name file
         var filename = ""
         
         if imageSelected == true {
             filename = "post-\(uuid).jpg"
         }
-        
+
         let mimetype = "image/jpg"
         
         body.appendString("--\(boundary)\r\n")
@@ -104,12 +105,113 @@ class PostVC: UIViewController, UITextViewDelegate, UIImagePickerControllerDeleg
         
     }
     
+    // function sending requset to PHP to uplaod a file
+    func uploadPost() {
+        
+        // shortcuts to data to be passed to php file
+        let id = user!["id"] as! String
+        uuid = UUID().uuidString
+        let text = textBox.text as String
+        
+        
+        // url path to php file
+        let url = URL(string: "http://localhost/TwitterClone/posts.php")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        
+        // param to be passed to php file
+        let param = [
+            "id" : id,
+            "uuid" : uuid,
+            "text" : text
+        ]
+        
+        // body
+        let boundary = "Boundary-\(UUID().uuidString)"
+        request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+        
+        // if picture is selected, compress it by half
+        var imageData = Data()
+        
+        if pictureImg.image != nil {
+            imageData = UIImageJPEGRepresentation(pictureImg.image!, 0.5)!
+        }
+        
+        // ... body
+        request.httpBody = createBodyWithParams(param, filePathKey: "file", imageDataKey: imageData, boundary: boundary)
+        
+        // launch session
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            
+            // get main queu to communicate back to user
+            DispatchQueue.main.async(execute: {
+                
+                
+                if error == nil {
+                    
+                    do {
+                        
+                        // json containes $returnArray from php
+                        let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? NSDictionary
+                        
+                        // declare new var to store json inf
+                        guard let parseJSON = json else {
+                            print("Error while parsing")
+                            return
+                        }
+                        
+                        // get message from $returnArray["message"]
+                        let message = parseJSON["message"]
+                        
+                        // if there is some message - post is made
+                        if message != nil {
+                            
+                            // reset UI
+                            self.textBox.text = ""
+                            self.countLabel.text = "140"
+                            self.pictureImg.image = nil
+                            self.postBtn.isEnabled = false
+                            self.postBtn.alpha = 0.4
+                            self.imageSelected = false
+                            
+                            // switch to another scene
+                            self.tabBarController?.selectedIndex = 0
+                            
+                        }
+                        
+                    } catch {
+                        
+                        // get main queue to communicate back to user
+                        DispatchQueue.main.async(execute: {
+                            let message = "\(error)"
+                            appDelegate.infoView(message: message, color: redSmoothColor)
+                        })
+                        return
+                        
+                    }
+                    
+                } else {
+                    
+                    // get main queue to communicate back to user
+                    DispatchQueue.main.async(execute: {
+                        let message = error!.localizedDescription
+                        appDelegate.infoView(message: message, color: redSmoothColor)
+                    })
+                    return
+                    
+                }
+                
+                
+            })
+            
+            }.resume()
+        
+    }
     
-
     @IBAction func postTapped(_ sender: UIButton) {
     
         if !textBox.text.isEmpty && textBox.text.characters.count <= 140 {
-            // post
+            uploadPost()
         }
     }
 

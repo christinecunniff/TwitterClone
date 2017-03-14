@@ -67,7 +67,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
-    func infoView(mesage message: String, color: UIColor) {
+    func infoView(message: String, color: UIColor) {
         
         if infoViewIsShowing == false {
             

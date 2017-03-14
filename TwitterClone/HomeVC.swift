@@ -166,7 +166,7 @@ class HomeVC: UIViewController, UINavigationControllerDelegate, UIImagePickerCon
                             // get main queue to communicate back to user
                             DispatchQueue.main.async(execute: {
                                 let message = parseJSON["message"] as! String
-                                appDelegate.infoView(mesage: message, color: redSmoothColor)
+                                appDelegate.infoView(message: message, color: redSmoothColor)
                             })
                             
                         }
@@ -177,7 +177,7 @@ class HomeVC: UIViewController, UINavigationControllerDelegate, UIImagePickerCon
                         // get main queue to communicate back to user
                         DispatchQueue.main.async(execute: {
                             let message = error as! String
-                            appDelegate.infoView(mesage: message, color: redSmoothColor)
+                            appDelegate.infoView(message: message, color: redSmoothColor)
                         })
                         
                     }
@@ -188,7 +188,7 @@ class HomeVC: UIViewController, UINavigationControllerDelegate, UIImagePickerCon
                     // get main queue to communicate back to user
                     DispatchQueue.main.async(execute: {
                         let message = error!.localizedDescription
-                        appDelegate.infoView(mesage: message, color: redSmoothColor)
+                        appDelegate.infoView(message: message, color: redSmoothColor)
                     })
                     
                 }
