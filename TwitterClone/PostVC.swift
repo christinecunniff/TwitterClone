@@ -173,6 +173,7 @@ class PostVC: UIViewController, UITextViewDelegate, UIImagePickerControllerDeleg
                             self.postBtn.isEnabled = false
                             self.postBtn.alpha = 0.4
                             self.imageSelected = false
+                            self.imageSelected = false
                             
                             // switch to another scene
                             self.tabBarController?.selectedIndex = 0
