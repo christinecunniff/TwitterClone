@@ -279,6 +279,16 @@ class HomeVC: UIViewController, UINavigationControllerDelegate, UIImagePickerCon
         cell.textLbl.text = text
         cell.picImg.image = image
         
+        DispatchQueue.main.async {
+            // move text left if there is no pic
+            if image.size.width == 0 && image.size.height == 0 {
+                cell.textLbl.frame.origin.x = self.view.frame.size.width / 16
+                cell.textLbl.frame.size.width = self.view.frame.size.width - self.view.frame.size.width / 8
+            }
+            
+        }
+       
+        
         return cell
     }
     
@@ -318,8 +328,7 @@ class HomeVC: UIViewController, UINavigationControllerDelegate, UIImagePickerCon
                             print("Error while getting pots")
                             return
                         }
-                        
-                        print(posts)
+
                         // append all post var's info to tweets
                         self.tweets = posts
                         
