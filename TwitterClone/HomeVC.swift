@@ -1,12 +1,15 @@
 import UIKit
 
-class HomeVC: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class HomeVC: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var avaImage: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var fullNameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var editBtn: UIButton!
+    
+    // array to store tweets
+    var tweets = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +51,8 @@ class HomeVC: UIViewController, UINavigationControllerDelegate, UIImagePickerCon
         
         self.navigationItem.title = username
         editBtn.setTitleColor(brandBlueColor, for: .normal)
+        
+        tweets = ["hello", "world", "how", "are", "you"]
     }
 
     @IBAction func editProfileTapped(_ sender: UIButton) {
@@ -200,6 +205,7 @@ class HomeVC: UIViewController, UINavigationControllerDelegate, UIImagePickerCon
         
     }
     
+    
     @IBAction func logoutTapped(_ sender: UIBarButtonItem) {
         // remove saved info
         UserDefaults.standard.removeObject(forKey: "parseJSON")
@@ -208,6 +214,30 @@ class HomeVC: UIViewController, UINavigationControllerDelegate, UIImagePickerCon
         //go to login page
         let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
         self.present(loginVC, animated: false, completion: nil)
+    }
+    
+    // MARK: TableView methods
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return tweets.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as? PostCell
+        cell?.usernameLbl.text = tweets[indexPath.row]
+        cell?.textLbl.text = tweets[indexPath.row]
+        
+        DispatchQueue.main.async {
+            cell?.textLbl.sizeToFit()
+        }
+        
+        cell?.picImg.image = UIImage(named: "ava.jpg")
+        
+        return cell!
     }
     
         
