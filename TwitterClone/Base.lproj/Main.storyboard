@@ -540,21 +540,64 @@
             </objects>
             <point key="canvasLocation" x="-1196" y="1684"/>
         </scene>
-        <!--Root View Controller-->
+        <!--USERS-->
         <scene sceneID="StW-hz-gfG">
             <objects>
                 <tableViewController id="tkS-i8-2iB" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="qab-hm-rLZ">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" id="qab-hm-rLZ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="qY2-a1-o6Y">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="tkS-i8-2iB" id="BKa-LC-NHX"/>
+                            </connections>
+                        </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="d8g-6J-uJn">
-                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="80" id="d8g-6J-uJn">
+                                <rect key="frame" x="0.0" y="72" width="320" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d8g-6J-uJn" id="cla-sk-ayD">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ava" translatesAutoresizingMaskIntoConstraints="NO" id="j0N-68-e8K">
+                                            <rect key="frame" x="10" y="10" width="60" height="60"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="60" id="VGb-nZ-B0K"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5BZ-xx-DaU">
+                                            <rect key="frame" x="80" y="10" width="230" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="h6T-VB-RCR"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                            <color key="textColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f93-rm-Pwc">
+                                            <rect key="frame" x="80" y="34" width="230" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="5BZ-xx-DaU" firstAttribute="trailing" secondItem="f93-rm-Pwc" secondAttribute="trailing" id="2nA-6x-vrg"/>
+                                        <constraint firstItem="j0N-68-e8K" firstAttribute="top" secondItem="cla-sk-ayD" secondAttribute="topMargin" constant="2" id="9fD-zf-amZ"/>
+                                        <constraint firstItem="f93-rm-Pwc" firstAttribute="top" secondItem="5BZ-xx-DaU" secondAttribute="bottom" constant="3" id="AS7-Fs-41Z"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="5BZ-xx-DaU" secondAttribute="trailing" constant="2" id="DkR-Vq-pUA"/>
+                                        <constraint firstItem="5BZ-xx-DaU" firstAttribute="leading" secondItem="j0N-68-e8K" secondAttribute="trailing" constant="10" id="N47-1K-d2h"/>
+                                        <constraint firstItem="5BZ-xx-DaU" firstAttribute="leading" secondItem="f93-rm-Pwc" secondAttribute="leading" id="ebG-pY-p17"/>
+                                        <constraint firstItem="j0N-68-e8K" firstAttribute="top" secondItem="5BZ-xx-DaU" secondAttribute="top" id="hzI-cO-orX"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="f93-rm-Pwc" secondAttribute="bottom" constant="17" id="jch-Q5-Ngx"/>
+                                        <constraint firstItem="j0N-68-e8K" firstAttribute="centerY" secondItem="cla-sk-ayD" secondAttribute="centerY" id="juo-7V-Wod"/>
+                                        <constraint firstItem="j0N-68-e8K" firstAttribute="leading" secondItem="cla-sk-ayD" secondAttribute="leadingMargin" constant="2" id="yiT-bT-eni"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -563,11 +606,11 @@
                             <outlet property="delegate" destination="tkS-i8-2iB" id="Ts6-ag-Gmp"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="FjP-Iu-yjp"/>
+                    <navigationItem key="navigationItem" title="USERS" id="FjP-Iu-yjp"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jdE-H4-gEv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-414" y="2403"/>
+            <point key="canvasLocation" x="-414.375" y="2402.1126760563379"/>
         </scene>
         <!--Users-->
         <scene sceneID="pKK-2F-kjm">
