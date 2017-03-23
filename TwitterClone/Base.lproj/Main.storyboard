@@ -612,6 +612,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="USERS" id="FjP-Iu-yjp"/>
+                    <connections>
+                        <outlet property="searchBar" destination="qY2-a1-o6Y" id="ewB-Ze-xF8"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jdE-H4-gEv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
