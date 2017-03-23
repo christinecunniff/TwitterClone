@@ -11,6 +11,8 @@ class PostCell: UITableViewCell {
         super.awakeFromNib()
         
         usernameLbl.textColor = brandBlueColor
+        picImg.layer.cornerRadius = picImg.bounds.width / 20
+        picImg.clipsToBounds = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

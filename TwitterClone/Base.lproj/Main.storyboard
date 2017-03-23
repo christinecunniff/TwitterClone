@@ -332,7 +332,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ta6-lW-vFq">
-                                                    <rect key="frame" x="98" y="36" width="207" height="76"/>
+                                                    <rect key="frame" x="115" y="36" width="190" height="76"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -346,7 +346,7 @@
                                                 <constraint firstItem="JvC-1b-B8h" firstAttribute="leading" secondItem="9Ts-0y-RLP" secondAttribute="leadingMargin" constant="12" id="MwQ-fU-ymC"/>
                                                 <constraint firstItem="JvC-1b-B8h" firstAttribute="baseline" secondItem="2vr-bl-iEM" secondAttribute="baseline" id="P9s-UU-WUt"/>
                                                 <constraint firstItem="JvC-1b-B8h" firstAttribute="top" secondItem="2vr-bl-iEM" secondAttribute="top" id="Rla-a0-yWj"/>
-                                                <constraint firstItem="ta6-lW-vFq" firstAttribute="leading" secondItem="e05-fj-iDh" secondAttribute="trailing" constant="3" id="cui-qi-RZ0"/>
+                                                <constraint firstItem="ta6-lW-vFq" firstAttribute="leading" secondItem="e05-fj-iDh" secondAttribute="trailing" constant="20" id="cui-qi-RZ0"/>
                                                 <constraint firstItem="JvC-1b-B8h" firstAttribute="top" secondItem="9Ts-0y-RLP" secondAttribute="topMargin" constant="2" id="h3y-n9-ndo"/>
                                                 <constraint firstItem="e05-fj-iDh" firstAttribute="top" secondItem="JvC-1b-B8h" secondAttribute="bottom" constant="5" id="kS6-eO-oDl"/>
                                                 <constraint firstItem="e05-fj-iDh" firstAttribute="bottom" secondItem="9Ts-0y-RLP" secondAttribute="bottomMargin" id="uH2-Oc-K9q"/>

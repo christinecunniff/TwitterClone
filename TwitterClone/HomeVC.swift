@@ -280,6 +280,9 @@ class HomeVC: UIViewController, UINavigationControllerDelegate, UIImagePickerCon
         cell.picImg.image = image
         
         DispatchQueue.main.async {
+            
+            cell.textLbl.sizeToFit()
+            
             // move text left if there is no pic
             if image.size.width == 0 && image.size.height == 0 {
                 cell.textLbl.frame.origin.x = self.view.frame.size.width / 16
