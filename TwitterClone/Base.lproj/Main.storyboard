@@ -298,7 +298,7 @@
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wgF-qd-bXp">
                                 <rect key="frame" x="0.0" y="147" width="320" height="372"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="120" id="fyw-kb-1FM" customClass="PostCell" customModule="TwitterClone" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="120"/>
@@ -391,6 +391,7 @@
                         <outlet property="editBtn" destination="2aG-gp-xXp" id="87I-3s-wc6"/>
                         <outlet property="emailLabel" destination="owc-97-vCz" id="ewh-c6-fAQ"/>
                         <outlet property="fullNameLabel" destination="bHB-ZX-aIo" id="dLJ-he-j6P"/>
+                        <outlet property="tableView" destination="wgF-qd-bXp" id="Jdx-Fb-yPh"/>
                         <outlet property="userNameLabel" destination="Je9-9N-h7L" id="Dea-aP-Edo"/>
                     </connections>
                 </viewController>

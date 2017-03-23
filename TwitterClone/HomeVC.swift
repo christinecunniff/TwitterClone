@@ -7,6 +7,7 @@ class HomeVC: UIViewController, UINavigationControllerDelegate, UIImagePickerCon
     @IBOutlet weak var fullNameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var editBtn: UIButton!
+    @IBOutlet weak var tableView: UITableView!
     
     // array to store tweets
     var tweets = [String]()
@@ -52,6 +53,7 @@ class HomeVC: UIViewController, UINavigationControllerDelegate, UIImagePickerCon
         self.navigationItem.title = username
         editBtn.setTitleColor(brandBlueColor, for: .normal)
         
+        tableView.contentInset = UIEdgeInsets(top: 2, left: 0, bottom: 0, right: 0)
         tweets = ["hello", "world", "how", "are", "you"]
     }
 
