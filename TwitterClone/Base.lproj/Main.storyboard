@@ -543,7 +543,7 @@
         <!--USERS-->
         <scene sceneID="StW-hz-gfG">
             <objects>
-                <tableViewController id="tkS-i8-2iB" sceneMemberID="viewController">
+                <tableViewController id="tkS-i8-2iB" customClass="UsersVC" customModule="TwitterClone" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" id="qab-hm-rLZ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -557,7 +557,7 @@
                             </connections>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="80" id="d8g-6J-uJn">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="userCell" rowHeight="80" id="d8g-6J-uJn" customClass="UsersCell" customModule="TwitterClone" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="72" width="320" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d8g-6J-uJn" id="cla-sk-ayD">
@@ -599,6 +599,11 @@
                                         <constraint firstItem="j0N-68-e8K" firstAttribute="leading" secondItem="cla-sk-ayD" secondAttribute="leadingMargin" constant="2" id="yiT-bT-eni"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="avaImg" destination="j0N-68-e8K" id="XgC-Uw-M4o"/>
+                                    <outlet property="fullnameLbl" destination="f93-rm-Pwc" id="d7A-7S-jtd"/>
+                                    <outlet property="usernameLbl" destination="5BZ-xx-DaU" id="uT6-7C-DyS"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

@@ -16,6 +16,8 @@
 		F45F06161E40F5C6001AB77A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F45F06151E40F5C6001AB77A /* Assets.xcassets */; };
 		F45F06191E40F5C6001AB77A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F45F06171E40F5C6001AB77A /* LaunchScreen.storyboard */; };
 		F490F3A91E83FFDE00188C0C /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F490F3A81E83FFDE00188C0C /* PostCell.swift */; };
+		F490F3AB1E844E8000188C0C /* UsersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F490F3AA1E844E8000188C0C /* UsersVC.swift */; };
+		F490F3AD1E844E9F00188C0C /* UsersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F490F3AC1E844E9F00188C0C /* UsersCell.swift */; };
 		F4AF65571E4519FD00EBF8B4 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AF65561E4519FD00EBF8B4 /* LoginVC.swift */; };
 		F4D78A421E6855BF003163F0 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D78A411E6855BF003163F0 /* HomeVC.swift */; };
 		F4D78A441E68BDB8003163F0 /* PostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D78A431E68BDB8003163F0 /* PostVC.swift */; };
@@ -33,6 +35,8 @@
 		F45F06181E40F5C6001AB77A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F45F061A1E40F5C6001AB77A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F490F3A81E83FFDE00188C0C /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		F490F3AA1E844E8000188C0C /* UsersVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersVC.swift; sourceTree = "<group>"; };
+		F490F3AC1E844E9F00188C0C /* UsersCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersCell.swift; sourceTree = "<group>"; };
 		F4AF65561E4519FD00EBF8B4 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		F4D78A411E6855BF003163F0 /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		F4D78A431E68BDB8003163F0 /* PostVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostVC.swift; sourceTree = "<group>"; };
@@ -88,6 +92,7 @@
 				F4D78A431E68BDB8003163F0 /* PostVC.swift */,
 				F45F06101E40F5C6001AB77A /* RegistrationVC.swift */,
 				F422C05B1E48FC4100E37CC1 /* ResetVC.swift */,
+				F490F3AA1E844E8000188C0C /* UsersVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -98,6 +103,7 @@
 				F434BD3C1E4CFD01004694F2 /* NavVC.swift */,
 				F434BD3E1E4D0A2D004694F2 /* TabBarVC.swift */,
 				F490F3A81E83FFDE00188C0C /* PostCell.swift */,
+				F490F3AC1E844E9F00188C0C /* UsersCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -187,7 +193,9 @@
 				F434BD3D1E4CFD01004694F2 /* NavVC.swift in Sources */,
 				F45F06111E40F5C6001AB77A /* RegistrationVC.swift in Sources */,
 				F45F060F1E40F5C6001AB77A /* AppDelegate.swift in Sources */,
+				F490F3AB1E844E8000188C0C /* UsersVC.swift in Sources */,
 				F490F3A91E83FFDE00188C0C /* PostCell.swift in Sources */,
+				F490F3AD1E844E9F00188C0C /* UsersCell.swift in Sources */,
 				F434BD3F1E4D0A2D004694F2 /* TabBarVC.swift in Sources */,
 				F4D78A441E68BDB8003163F0 /* PostVC.swift in Sources */,
 				F4AF65571E4519FD00EBF8B4 /* LoginVC.swift in Sources */,
