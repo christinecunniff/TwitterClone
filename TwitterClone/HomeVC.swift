@@ -10,7 +10,7 @@ class HomeVC: UIViewController, UINavigationControllerDelegate, UIImagePickerCon
     @IBOutlet weak var tableView: UITableView!
     
     // array to store tweets
-    var tweets = [String]()
+    var tweets = [AnyObject]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,7 +54,12 @@ class HomeVC: UIViewController, UINavigationControllerDelegate, UIImagePickerCon
         editBtn.setTitleColor(brandBlueColor, for: .normal)
         
         tableView.contentInset = UIEdgeInsets(top: 2, left: 0, bottom: 0, right: 0)
-        tweets = ["hello", "world", "how", "are", "you"]
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        loadPosts()
     }
 
     @IBAction func editProfileTapped(_ sender: UIButton) {
@@ -218,6 +223,7 @@ class HomeVC: UIViewController, UINavigationControllerDelegate, UIImagePickerCon
         self.present(loginVC, animated: false, completion: nil)
     }
     
+    
     // MARK: TableView methods
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -229,17 +235,99 @@ class HomeVC: UIViewController, UINavigationControllerDelegate, UIImagePickerCon
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as? PostCell
-        cell?.usernameLbl.text = tweets[indexPath.row]
-        cell?.textLbl.text = tweets[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! PostCell
         
-        DispatchQueue.main.async {
-            cell?.textLbl.sizeToFit()
+        let tweet = tweets[indexPath.row]
+        let username = tweet["username"] as? String
+        let text = tweet["text"] as? String
+        let date = tweet["date"] as! String
+        
+        // caonverting date string ot date
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd-HH:mm:ss"
+        let newDate = dateFormatter.date(from: date)!
+        
+        //declare settings
+        let from = newDate
+        let now = Date()
+        let components : NSCalendar.Unit = [.second, .minute, .hour, .day, .weekOfMonth]
+        let difference = (Calendar.current as NSCalendar).components(components, from: from, to: now, options: [])
+        
+        // calculate date
+        if difference.second! <= 0 {
+            cell.dateLbl.text = "now"
+        }
+        if difference.second! > 0 && difference.minute! == 0 {
+            cell.dateLbl.text = "\(difference.second)s." // 12s.
+        }
+        if difference.minute! > 0 && difference.hour! == 0 {
+            cell.dateLbl.text = "\(difference.minute)m."
+        }
+        if difference.hour! > 0 && difference.day! == 0 {
+            cell.dateLbl.text = "\(difference.hour)h."
+        }
+        if difference.day! > 0 && difference.weekOfMonth! == 0 {
+            cell.dateLbl.text = "\(difference.day)d."
+        }
+        if difference.weekOfMonth! > 0 {
+            cell.dateLbl.text = "\(difference.weekOfMonth)w."
         }
         
-        cell?.picImg.image = UIImage(named: "ava.jpg")
+        cell.usernameLbl.text = username
+        cell.textLbl.text = text
         
-        return cell!
+        return cell
+    }
+    
+    func loadPosts() {
+        
+        // shortcut to id
+        let id = user!["id"] as! String
+        
+        let url = URL(string: "http://localhost/TwitterClone/posts.php")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        let body = "id=\(id)&text=&uuid="
+        
+        request.httpBody = body.data(using: String.Encoding.utf8)
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            
+            
+            DispatchQueue.main.async(execute: {
+                
+                if error == nil {
+                    
+                    do {
+                    
+                        let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? NSDictionary
+                        
+                        guard let parseJSON = json else {
+                            print("Error while parsing")
+                            return
+                        }
+                        
+                        guard let posts = parseJSON["posts"] as? [AnyObject] else {
+                            print("Error while getting pots")
+                            return
+                        }
+                        
+                        print(posts)
+                        self.tweets = posts
+                        self.tableView.reloadData()
+                        
+                    } catch {
+                        print("Caught an error: \(error)")
+                    }
+                    
+                } else {
+                    print("error: \(error)")
+                }
+                
+            })
+            
+        }.resume()
+        
     }
     
         
