@@ -366,6 +366,77 @@ class HomeVC: UIViewController, UINavigationControllerDelegate, UIImagePickerCon
         
     }
     
+    // MARK: Deleting cell methods
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // send delete PHP request
+            deletePost(indexPath: indexPath)
+        }
+        
+    }
+    
+    // delete post php request
+    func deletePost(indexPath: IndexPath) {
+        let tweet = tweets[indexPath.row]
+        let uuid = tweet["uuid"] as! String
+        let path = tweet["path"] as! String
+        
+        let url = URL(string: "http://localhost/TwitterClone/posts.php")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        let body = "uuid=\(uuid)&path=\(path)"
+        request.httpBody = body.data(using: String.Encoding.utf8)
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            
+            DispatchQueue.main.async(execute: {
+                if error == nil {
+                    do {
+                    
+                        let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? NSDictionary
+                        
+                        guard let parseJSON = json else {
+                            print("Error while parsing")
+                            return
+                        }
+                        
+                        let result = parseJSON["result"]
+                        if result != nil {
+                            self.tweets.remove(at: indexPath.row)
+                            self.images.remove(at: indexPath.row)
+                            self.tableView.deleteRows(at: [indexPath], with: .automatic)
+                            self.tableView.reloadData()
+                        } else {
+                            let message = parseJSON["message"]
+                            print(message as Any)
+                        }
+                        
+                    } catch {
+                        // get main queue to communicate back to user
+                        DispatchQueue.main.async(execute: {
+                            let message = "\(error)"
+                            appDelegate.infoView(message: message, color: redSmoothColor)
+                        })
+                        return
+                    }
+                } else {
+                    // get main queue to communicate back to user
+                    DispatchQueue.main.async(execute: {
+                        let message = error!.localizedDescription
+                        appDelegate.infoView(message: message, color: redSmoothColor)
+                    })
+                    return
+                }
+            })
+            
+        }.resume()
+    }
+    
         
 }
 
