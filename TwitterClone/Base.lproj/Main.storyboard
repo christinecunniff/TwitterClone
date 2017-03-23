@@ -300,7 +300,7 @@
                                 <rect key="frame" x="0.0" y="147" width="320" height="372"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="120" id="fyw-kb-1FM">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="120" id="fyw-kb-1FM" customClass="PostCell" customModule="TwitterClone" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fyw-kb-1FM" id="9Ts-0y-RLP">
@@ -354,8 +354,18 @@
                                                 <constraint firstItem="e05-fj-iDh" firstAttribute="top" secondItem="ta6-lW-vFq" secondAttribute="top" id="zBd-Xb-y67"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dateLbl" destination="2vr-bl-iEM" id="gvK-Bp-qs4"/>
+                                            <outlet property="picImg" destination="e05-fj-iDh" id="N5A-iQ-r3e"/>
+                                            <outlet property="textLbl" destination="ta6-lW-vFq" id="XcS-fl-7hW"/>
+                                            <outlet property="usernameLbl" destination="JvC-1b-B8h" id="5KT-l4-DTk"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Xiw-Cq-XEC" id="0lb-Ew-8KA"/>
+                                    <outlet property="delegate" destination="Xiw-Cq-XEC" id="KdS-OL-I6h"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
