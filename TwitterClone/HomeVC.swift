@@ -11,6 +11,7 @@ class HomeVC: UIViewController, UINavigationControllerDelegate, UIImagePickerCon
     
     // array to store tweets
     var tweets = [AnyObject]()
+    var images = [UIImage]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -238,6 +239,7 @@ class HomeVC: UIViewController, UINavigationControllerDelegate, UIImagePickerCon
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! PostCell
         
         let tweet = tweets[indexPath.row]
+        let image = images[indexPath.row]
         let username = tweet["username"] as? String
         let text = tweet["text"] as? String
         let date = tweet["date"] as! String
@@ -275,6 +277,7 @@ class HomeVC: UIViewController, UINavigationControllerDelegate, UIImagePickerCon
         
         cell.usernameLbl.text = username
         cell.textLbl.text = text
+        cell.picImg.image = image
         
         return cell
     }
@@ -302,6 +305,10 @@ class HomeVC: UIViewController, UINavigationControllerDelegate, UIImagePickerCon
                     
                         let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? NSDictionary
                         
+                        self.tweets.removeAll(keepingCapacity: false)
+                        self.images.removeAll(keepingCapacity: false)
+                        self.tableView.reloadData()
+                        
                         guard let parseJSON = json else {
                             print("Error while parsing")
                             return
@@ -313,7 +320,24 @@ class HomeVC: UIViewController, UINavigationControllerDelegate, UIImagePickerCon
                         }
                         
                         print(posts)
+                        // append all post var's info to tweets
                         self.tweets = posts
+                        
+                        // getting images from url paths
+                        for i in 0..<self.tweets.count {
+                            let path = self.tweets[i]["path"] as? String
+                            
+                            if !path!.isEmpty {
+                                let url = URL(string: path!)!
+                                let imageData = try? Data(contentsOf: url)
+                                let image = UIImage(data: imageData!)!
+                                self.images.append(image)
+                            } else {
+                                let image = UIImage()
+                                self.images.append(image)
+                            }
+                        }
+                        
                         self.tableView.reloadData()
                         
                     } catch {
